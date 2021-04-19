@@ -2,7 +2,7 @@
 Racket language syntax highlighting for LaTex listings package
 
 ## Table of Content
-- [How to Use?](How-to-Use)
+- [How to Use?](how-to-use)
 
 ## How to Use?
 There are two ways to use LaTeX package in your document.
