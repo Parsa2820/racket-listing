@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage[overleafstyle]{racket-listing}
+
+\begin{document}
+	content...
+	\begin{lstlisting}[language=racket]
+	; This is racket code with racket-listing
+	(define (fib n)
+		(cond
+			[(or (equal? n 0) (equal? n 1)) 1]
+			[else (+ (fib (- n 1)) (fib (- n 2)))]
+			)
+		)
+	"Hello World"
+	\end{lstlisting}
+
+	\begin{lstlisting}
+	; This is racket code without racket-listing
+	(define (fib n)
+		(cond
+			[(or (equal? n 0) (equal? n 1)) 1]
+			[else (+ (fib (- n 1)) (fib (- n 2)))]
+			)
+		)
+	\end{lstlisting}
+\end{document}

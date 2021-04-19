@@ -1,0 +1,62 @@
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{overleafstyle}
+{
+    backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\DeclareOption{overleafstyle}
+{
+	\lstset{style=overleafstyle}
+}
+\DeclareOption*{\PackageWarning{racket-listing}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+\lstdefinelanguage{racket}
+{
+	morekeywords=
+	{
+		define, define-syntax, define-macro, lambda, define-stream, 
+		stream-lambda, begin, call-with-current-continuation, call/cc,
+		call-with-input-file, call-with-output-file, case, cond,
+		do, else, for-each, if,
+		let*, let, let-syntax, letrec, letrec-syntax,
+		define-context, define-controller, Integer, Boolean, get, 
+		when-required, when-provided, require, submod, or/c, ->, 
+		\#\%module-begin, with-syntax, define-struct/contract, syntax-case,
+		define/contract,
+		let-values, let*-values,
+		module, provide,
+		and, or, not, delay, force, \#`, \#',
+		\#lang, implement, begin-for-syntax, rename-out,
+		quasiquote, quote, unquote, unquote-splicing,
+		map, fold, syntax, syntax-rules, eval, environment, query 
+	},
+	sensitive=true,
+	morecomment=[l]{;},
+	morecomment=[s]{\#|}{|\#},
+	morestring=[b]"
+}[keywords, comments, strings]
+
+\endinput
